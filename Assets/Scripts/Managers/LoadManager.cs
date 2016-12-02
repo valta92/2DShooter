@@ -7,6 +7,7 @@ public class LoadManager : PersistentSingleton<LoadManager> {
     public override void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+        Screen.orientation = ScreenOrientation.Landscape; 
         base.Awake();
     }
 
