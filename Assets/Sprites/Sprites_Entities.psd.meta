@@ -1,0 +1,154 @@
+fileFormatVersion: 2
+guid: 34a39311c7113a843b40b1632c689962
+timeCreated: 1429506902
+licenseType: Store
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Sprite_Player
+    21300002: Sprite_Enemy1
+    21300004: Sprites_Entities_1
+    21300006: Sprite_AmmoPack
+    21300008: Sprite_HealthPack
+    21300010: Sprite_Enemy2
+    21300012: Sprite_RedBarrel
+    21300014: Sprites_Entities_0
+    21300016: Sprite_MoneyPack
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Sprite_Player
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 82
+        width: 15
+        height: 18
+      alignment: 9
+      pivot: {x: .5, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_Enemy1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 82
+        width: 15
+        height: 18
+      alignment: 9
+      pivot: {x: .5, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_AmmoPack
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_HealthPack
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 0
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_Enemy2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 82
+        width: 15
+        height: 18
+      alignment: 9
+      pivot: {x: .5, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_RedBarrel
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 11
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprites_Entities_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 82
+        width: 15
+        height: 18
+      alignment: 9
+      pivot: {x: .5, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprites_Entities_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 82
+        width: 15
+        height: 18
+      alignment: 9
+      pivot: {x: .5, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_MoneyPack
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 0
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

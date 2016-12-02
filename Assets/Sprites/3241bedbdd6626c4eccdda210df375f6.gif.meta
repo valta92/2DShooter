@@ -1,0 +1,283 @@
+fileFormatVersion: 2
+guid: 7214b3c3cd05f4b25bc5a023a7300bb7
+timeCreated: 1480634728
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: 3241bedbdd6626c4eccdda210df375f6_0
+    21300002: 3241bedbdd6626c4eccdda210df375f6_1
+    21300004: 3241bedbdd6626c4eccdda210df375f6_2
+    21300006: 3241bedbdd6626c4eccdda210df375f6_3
+    21300008: 3241bedbdd6626c4eccdda210df375f6_4
+    21300010: 3241bedbdd6626c4eccdda210df375f6_5
+    21300012: 3241bedbdd6626c4eccdda210df375f6_6
+    21300014: 3241bedbdd6626c4eccdda210df375f6_7
+    21300016: 3241bedbdd6626c4eccdda210df375f6_8
+    21300018: 3241bedbdd6626c4eccdda210df375f6_9
+    21300020: 3241bedbdd6626c4eccdda210df375f6_10
+    21300022: 3241bedbdd6626c4eccdda210df375f6_11
+    21300024: 3241bedbdd6626c4eccdda210df375f6_12
+    21300026: 3241bedbdd6626c4eccdda210df375f6_13
+    21300028: 3241bedbdd6626c4eccdda210df375f6_14
+    21300030: 3241bedbdd6626c4eccdda210df375f6_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 3241bedbdd6626c4eccdda210df375f6_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 202
+        width: 50
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 3241bedbdd6626c4eccdda210df375f6_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 202
+        width: 64
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 3241bedbdd6626c4eccdda210df375f6_2
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 184
+        width: 66
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 3241bedbdd6626c4eccdda210df375f6_3
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 188
+        width: 100
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 3241bedbdd6626c4eccdda210df375f6_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 138
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 3241bedbdd6626c4eccdda210df375f6_5
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 134
+        width: 96
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 3241bedbdd6626c4eccdda210df375f6_6
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 138
+        width: 98
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 3241bedbdd6626c4eccdda210df375f6_7
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 138
+        width: 102
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 3241bedbdd6626c4eccdda210df375f6_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 74
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 3241bedbdd6626c4eccdda210df375f6_9
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 74
+        width: 82
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 3241bedbdd6626c4eccdda210df375f6_10
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 70
+        width: 98
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 3241bedbdd6626c4eccdda210df375f6_11
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 72
+        width: 102
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 3241bedbdd6626c4eccdda210df375f6_12
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 10
+        width: 36
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 3241bedbdd6626c4eccdda210df375f6_13
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 10
+        width: 96
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 3241bedbdd6626c4eccdda210df375f6_14
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 2
+        width: 100
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 3241bedbdd6626c4eccdda210df375f6_15
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 10
+        width: 128
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
