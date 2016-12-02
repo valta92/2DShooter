@@ -51,4 +51,12 @@ public static class PoolManager
         } 
         return result;
     }
+
+    public static void DeactivateAll()
+    {
+        for(int i = 0; i< pools.Length; i++)
+        {
+            pools[i].ferula.DeactivatePool();
+        }
+    }
 }

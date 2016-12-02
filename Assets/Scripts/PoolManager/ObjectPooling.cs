@@ -17,7 +17,13 @@ public class ObjectPooling
         }
     }
 
-
+    public void DeactivatePool()
+    {
+        for (int i=0; i<objects.Count; i++) 
+        {
+            objects[i].ReturnToPool();
+        }
+    }
     public PoolObject GetObject () 
     {
         for (int i=0; i<objects.Count; i++) 

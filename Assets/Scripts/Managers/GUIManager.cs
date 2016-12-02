@@ -8,6 +8,7 @@ public class GUIManager : PersistentSingleton<GUIManager> {
     [SerializeField]private GameObject _HUDWindow;
     [SerializeField]private GameObject _MenuWindow;
     [SerializeField]private GameObject _InputWindow;
+    [SerializeField]private GameObject _GameOverWindow;
     [SerializeField]private Text _scoreText;
     [SerializeField]private Text _ammoText;
     [SerializeField]private Text _healthText;
@@ -22,6 +23,11 @@ public class GUIManager : PersistentSingleton<GUIManager> {
     public void SetActiveMenuWindow(bool value)
     {
         _MenuWindow.SetActive(value);
+    }
+
+    public void SetActiveGameOverWindow(bool value)
+    {
+//        _GameOverWindow.SetActive(value);
     }
 
     public void SetActiveHUDWindow(bool value)

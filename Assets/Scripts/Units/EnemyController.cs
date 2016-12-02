@@ -45,27 +45,33 @@ public class EnemyController : MonoBehaviour , IMove , IHealth
     public int moneyToGive;
     private Transform _transform;
     [SerializeField]private GameObject target;
-	void Start () 
+    void Start()
     {
-
+        
+    }
+    void OnEnable()
+    {
+        _health.healthPoints = _health.healthPointsMax;
         target = GameObject.FindGameObjectWithTag("Player");
         _transform = this.transform;
         _health.healthPoints = _health.healthPointsMax;
-	}
+    }
 
-    void OnEnable()
+    void OnDisable()
     {
-        Reset();
+        
     }
 	
 	void Update () 
     {
+        if (target == null)
+            return;
         SimpleAI();
 	}
 
     public void Reset()
     {
-        _health.healthPoints = _health.healthPointsMax;
+        
     }
 
     private void SimpleAI()

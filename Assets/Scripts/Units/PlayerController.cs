@@ -54,27 +54,32 @@ public class PlayerController : MonoBehaviour , IHealth
     {
         rb = GetComponent<Rigidbody2D>();
         _transform = this.transform;
-        _health.healthPoints = _health.healthPointsMax;
-        GUIManager.Instance.RefreshAmmo(_currentWeapon.ammo, _currentWeapon.ammoInClipMax);
-        GUIManager.Instance.RefreshHealthPoints(_health.healthPoints);
-        InputManager.Instance.OnMoveAxisChange += (sender, e) => MovementAxis(e.axis);
-        InputManager.Instance.OnAimAxisChange += (sender, e) =>  RotateAxis(e.axis);
-        InputManager.Instance.OnFireClick += (sender, e) => Shoot(); 
+       
+
     }
     void OnEnable()
     {
+        _health.healthPoints = _health.healthPointsMax;
+        GUIManager.Instance.RefreshAmmo(_currentWeapon.ammo, _currentWeapon.ammoInClipMax);
+        GUIManager.Instance.RefreshHealthPoints(_health.healthPoints);
 
-
+        InputManager.Instance.OnMoveAxisChange += MovementAxis;
+        InputManager.Instance.OnAimAxisChange += RotateAxis;
+        InputManager.Instance.OnFireClick += OnFireButtonTapped;
     }
 
-    private void MovementAxis(Vector2 axis)
+    private void OnFireButtonTapped(object sender , EventArgs e)
     {
-        rb.velocity = (axis * 2) * moveSpeed;
+        Shoot();
+    }
+    private void MovementAxis(object sender , AxisEventArgs e)
+    {
+        rb.velocity = (e.axis * 2) * moveSpeed;
     }
 
-    public void RotateAxis(Vector3 axis)
+    public void RotateAxis(object sender , AxisEventArgs e)
     {
-        Vector3 newaxis = new Vector3(axis.y, -axis.x, 0);
+        Vector3 newaxis = new Vector3(e.axis.y, -e.axis.x, 0);
         var dir = ((transform.position + newaxis))- transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -168,9 +173,24 @@ public class PlayerController : MonoBehaviour , IHealth
         if (_OnDestroyed != null)
             _OnDestroyed(this, null);
 
-        GameObject.Destroy(this.gameObject);
+        StartCoroutine(DestroySelf());
+
+
     }
-    
+
+
+    private IEnumerator DestroySelf()
+    {
+        InputManager.Instance.OnMoveAxisChange -= MovementAxis;
+        InputManager.Instance.OnAimAxisChange -= RotateAxis;
+        InputManager.Instance.OnFireClick -= OnFireButtonTapped;
+
+        yield return new WaitForSeconds(0.1f);
+
+        GameManager.Instance.GameOver();
+        GameObject.Destroy(this.gameObject,0.1f);
+
+    }
 
 
 }

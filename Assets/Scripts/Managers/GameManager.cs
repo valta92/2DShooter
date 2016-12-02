@@ -16,24 +16,15 @@ public class GameManager : PersistentSingleton<GameManager>
 
     void Start()
     {
-        Screen.orientation = ScreenOrientation.Portrait;
-        Menu();
+        Initialize();
     }
 
-    public void Menu()
-    {
-        SetPause(true);
-        GUIManager.Instance.SetActiveMenuWindow(true);
-        GUIManager.Instance.SetActiveHUDWindow(false);
-        GUIManager.Instance.SetActiveInputWindow(false);
-    }
-
-    public void Game()
+    public void Initialize()
     {
         Reset();
         GUIManager.Instance.SetActiveHUDWindow(true);
-        GUIManager.Instance.SetActiveMenuWindow(false);
         GUIManager.Instance.SetActiveInputWindow(true);
+        GUIManager.Instance.SetActiveGameOverWindow(false);
 
         GameObject player = Instantiate(Resources.Load(GameConstants.Player.PlayerPrefabPath)) as GameObject;
         player.transform.position = GameConstants.Player.SpawnPlayerPosition;
@@ -45,29 +36,16 @@ public class GameManager : PersistentSingleton<GameManager>
         _camera = Camera.main.gameObject.GetComponent<CameraController>() as CameraController;
         _camera.Initialize();
 
-        _playerController.OnDestroyed += (sender, e) => GameOver();
-
         LevelManager.Instance.Initialize();
 
     }
     public void GameOver()
     {
-        
-        SetScore(0);
-
+        PoolManager.DeactivateAll();
+        StopAllCoroutines();
+        LoadManager.Instance.GoToLevel(0);
     }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.C))
-        {
-            Debug.Log("Deactivate");
-        }
-    }
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
     public void AddScore(int count)
     {
         _score += count;
