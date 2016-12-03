@@ -153,11 +153,9 @@ public class WaveManager : PersistentSingleton<WaveManager> , IInitialize{
 
         GUIManager.Instance.RefreshRemainsEnemies(_remainsEnemies);
 
-
-
-        while (timer > 0)
+        while (true)
         {
-            timer -= Time.deltaTime;
+            yield return new WaitForEndOfFrame();
             timerRes -= Time.deltaTime;
             if(timerRes < 0)
             {
@@ -174,11 +172,10 @@ public class WaveManager : PersistentSingleton<WaveManager> , IInitialize{
                 spawnEnemiesCount--;
 
                 if (spawnEnemiesCount == 0)
+                {
                     break;
+                }
             }
-
-            GUIManager.Instance.RefreshTimeWave(timer);
-            yield return new WaitForEndOfFrame();
         }
 
         while(ActiveEnemies.Count > 0)
