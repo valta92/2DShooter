@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine.EventSystems;
 using CnControls;
 
-public class InputManager : PersistentSingleton<InputManager>
+public class InputManager : PersistentSingleton<InputManager> , IInitialize
 {
 
     public event EventHandler<AxisEventArgs> OnMoveAxisChange
@@ -45,20 +45,39 @@ public class InputManager : PersistentSingleton<InputManager>
     private event EventHandler _onFireClicked;
 
 
+    private float aimAxisY;
+    private float aimAxisX;
+
+    private float moveAxisX;
+    private float moveAxisY;
+
+    public void Initialize()
+    {
+        
+    }
+
+    public void Disable()
+    {
+        
+    }
+
     void Update()
     {
+        if (GameManager.Instance.Paused)
+            return;
 
-        float aimAxisY = CnInputManager.GetAxis("Vertical");
-        float aimAxisX = CnInputManager.GetAxis("Horizontal");
-        float axisMoveX = CnInputManager.GetAxis("AxisMoveX");
-        float axisMoveY = CnInputManager.GetAxis("AxisMoveY");
+
+        aimAxisY = CnInputManager.GetAxis("Vertical");
+        aimAxisX = CnInputManager.GetAxis("Horizontal");
+        moveAxisX = CnInputManager.GetAxis("AxisMoveX");
+        moveAxisY = CnInputManager.GetAxis("AxisMoveY");
 
 
         if (_onAimAxisChanged != null)
             _onAimAxisChanged(this, new AxisEventArgs(new Vector2(aimAxisX, aimAxisY)));
         
         if (_onMoveAxisChanged != null)
-            _onMoveAxisChanged(this, new AxisEventArgs(new Vector2(axisMoveX, axisMoveY)));
+            _onMoveAxisChanged(this, new AxisEventArgs(new Vector2(moveAxisX, moveAxisY)));
 
         if (CnInputManager.GetButtonDown("Jump"))
         {

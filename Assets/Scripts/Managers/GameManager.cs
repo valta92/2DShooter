@@ -1,27 +1,45 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
-public class GameManager : PersistentSingleton<GameManager> 
+public class GameManager : PersistentSingleton<GameManager> , IInitialize
 {
 
     public bool Paused { get { return _paused; } }
-    public int Score { get { return _score; } }
 
     [SerializeField]private bool _paused;
-    [SerializeField]private int _score;
+    [SerializeField]private bool _gameStarted;
 
     private PlayerController _playerController;
     private CameraController _camera;
 
 
-    void Start()
-    {
-        Initialize();
-    }
-
     public void Initialize()
     {
-        Reset();
+        WaveManager.Instance.WaveIdleIsEnd += OnIdleWaveIsEnded;
+        WaveManager.Instance.WaveIsEnd += OnBattleWaveIsEnded;
+    }
+    public void Disable()
+    {
+        WaveManager.Instance.WaveIdleIsEnd -= OnIdleWaveIsEnded;
+        WaveManager.Instance.WaveIsEnd -= OnBattleWaveIsEnded;
+    }
+
+    private void OnIdleWaveIsEnded(object obj,WaveEventArgs e)
+    {
+        WaveManager.Instance.LoadBattleWave(e.lastWave);
+    }
+
+    private void OnBattleWaveIsEnded(object obj,WaveEventArgs e)
+    {
+        WaveManager.Instance.LoadIdleWave(e.lastWave + 1);
+    }
+
+    public void StartGame()
+    {
+        ScoreManager.Instance.SetScore(0);
+        SetPause(false);
+        _gameStarted = true;
         GUIManager.Instance.SetActiveHUDWindow(true);
         GUIManager.Instance.SetActiveInputWindow(true);
         GUIManager.Instance.SetActiveGameOverWindow(false);
@@ -30,13 +48,15 @@ public class GameManager : PersistentSingleton<GameManager>
         player.transform.position = GameConstants.Player.SpawnPlayerPosition;
         player.transform.rotation = Quaternion.identity;
 
-        _playerController = player.GetComponent<PlayerController>();
+        if(_camera == null)
+            _camera = Camera.main.gameObject.GetComponent<CameraController>() as CameraController;
+
+        if(_playerController == null)
+            _playerController = player.GetComponent<PlayerController>();
+
         _playerController.Initialize();
-
-        _camera = Camera.main.gameObject.GetComponent<CameraController>() as CameraController;
         _camera.Initialize();
-
-        LevelManager.Instance.Initialize();
+        WaveManager.Instance.LoadIdleWave(1);
 
     }
     public void GameOver()
@@ -45,17 +65,7 @@ public class GameManager : PersistentSingleton<GameManager>
         StopAllCoroutines();
         LoadManager.Instance.GoToLevel(0);
     }
-
-    public void AddScore(int count)
-    {
-        _score += count;
-        GUIManager.Instance.RefreshScore(_score);
-    }
-    public void SetScore(int count)
-    {
-        _score = count;
-        GUIManager.Instance.RefreshScore(_score);
-    }
+        
 
     public void SetPause(bool value)
     {
@@ -72,9 +82,13 @@ public class GameManager : PersistentSingleton<GameManager>
             
     }
 
-    public void Reset()
+    void OnApplicationFocus( bool hasFocus )
     {
-        SetScore(0);
-        SetPause(false);
+        if(_gameStarted)
+        {
+            SetPause(!hasFocus);
+        }
+
     }
+
 }     

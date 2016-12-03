@@ -4,7 +4,7 @@ using System.Collections;
 
 public class EnemyController : MonoBehaviour , IMove , IHealth 
 {
-    public event EventHandler OnDamaged
+    public event EventHandler<UnitArgs> OnDamaged
     {
         add
         {
@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour , IMove , IHealth
             _onDamaged -= value;
         }
     }
-    public event EventHandler OnDestroyed
+    public event EventHandler<UnitArgs> OnDestroyed
     {
         add
         {
@@ -31,8 +31,8 @@ public class EnemyController : MonoBehaviour , IMove , IHealth
     public Health HealthComponent { get { return _health; } }
     public float MoveSpeed{ get { return _moveSpeed; } }
 
-    private event EventHandler _onDamaged;
-    private event EventHandler _OnDestroyed;
+    private event EventHandler<UnitArgs> _onDamaged;
+    private event EventHandler<UnitArgs> _OnDestroyed;
 
     [SerializeField]private float _moveSpeed;
     [SerializeField]private Health _health;
@@ -66,6 +66,7 @@ public class EnemyController : MonoBehaviour , IMove , IHealth
     {
         if (target == null)
             return;
+        
         SimpleAI();
 	}
 
@@ -127,9 +128,9 @@ public class EnemyController : MonoBehaviour , IMove , IHealth
     public void Death()
     {
         if (_OnDestroyed != null)
-            _OnDestroyed(this, null);
+            _OnDestroyed(this, new UnitArgs(this.gameObject));
 
-        GameManager.Instance.AddScore(scoreToGive);
+        ScoreManager.Instance.AddScore(scoreToGive);
         gameObject.SetActive(false);
     }
         

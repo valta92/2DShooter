@@ -4,8 +4,8 @@ using System;
 
 public interface IHealth
 {
-    event EventHandler OnDamaged;
-    event EventHandler OnDestroyed;
+    event EventHandler<UnitArgs> OnDamaged;
+    event EventHandler<UnitArgs> OnDestroyed;
 
     Health HealthComponent { get; }
 

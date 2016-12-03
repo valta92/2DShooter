@@ -9,8 +9,8 @@ namespace GameConstants
         public const float IdleTime = 10f;
         public static readonly Dictionary<int, WaveSpawn> Wave = new Dictionary<int, WaveSpawn>() 
         {
-            { 0, new WaveSpawn(10,40f,5) },
-            { 1, new WaveSpawn(15,40f,5) },
+            { 0, new WaveSpawn(2,40f,5) },
+            { 1, new WaveSpawn(2,5f,5) },
             { 2, new WaveSpawn(20,40f,5) },
             { 3, new WaveSpawn(30,40f,5) },
             { 4, new WaveSpawn(35,40f,5) },
@@ -24,7 +24,11 @@ namespace GameConstants
 
         };
     }
-
+    public static class Score
+    {
+        public const string ScoreKey = "Score";
+        public const string HighScoreKey = "HighScore";
+    }
     public static class Particles
     {
         public static string[] ParticlesNames = new string[]
@@ -81,6 +85,7 @@ namespace GameConstants
             public const string Ammo = "AMMO : ";
             public const string Score = "SCORE : ";
             public const string AmmoSlash = " / ";
+            public const string RemainsEnemies = "Enemies : ";
         }
     }
 }

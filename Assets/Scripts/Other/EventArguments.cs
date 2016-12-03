@@ -55,3 +55,23 @@ public class PickupEventArgs : EventArgs
         count = c;
     }
 }
+
+public class WaveEventArgs : EventArgs
+{
+    public int lastWave;
+
+    public WaveEventArgs(int wave)
+    {
+        lastWave = wave;
+    }
+}
+
+public class UnitArgs : EventArgs
+{
+    public GameObject unit;
+
+    public UnitArgs(GameObject obj)
+    {
+        unit = obj;
+    }
+}

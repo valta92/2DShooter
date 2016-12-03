@@ -6,12 +6,16 @@ public class PoolSetup : MonoBehaviour {//обертка для управлен
 
 
     [SerializeField] 
-    private PoolManager.PoolPart[] pools;
+    private PoolManager.PoolGroup[] poolGroups;
 
     void OnValidate() 
     {
-        for (int i = 0; i < pools.Length; i++) {
-            pools[i].name = pools[i].prefab.name;
+        for(int i = 0; i < poolGroups.Length; i++)
+        {
+            for (int x = 0; x < poolGroups[i].pools.Length; x++) 
+            {
+                poolGroups[i].pools[x].name = poolGroups[i].pools[x].prefab.name;
+            }
         }
     }
 
@@ -22,6 +26,6 @@ public class PoolSetup : MonoBehaviour {//обертка для управлен
 
     void Initialize () 
     {
-        PoolManager.Initialize(pools);
+        PoolManager.Initialize(poolGroups);
     }
 }

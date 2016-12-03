@@ -2,11 +2,11 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class GUIManager : PersistentSingleton<GUIManager> {
+public class GUIManager : PersistentSingleton<GUIManager> , IInitialize
+{
 
 
     [SerializeField]private GameObject _HUDWindow;
-    [SerializeField]private GameObject _MenuWindow;
     [SerializeField]private GameObject _InputWindow;
     [SerializeField]private GameObject _GameOverWindow;
     [SerializeField]private Text _scoreText;
@@ -15,19 +15,40 @@ public class GUIManager : PersistentSingleton<GUIManager> {
     [SerializeField]private Image _weaponImage;
     [SerializeField]private Text _timeWaveText;
     [SerializeField]private Text _waveText;
+    [SerializeField]private Text _remainsEnemiesText;
+
+    public void Initialize()
+    {
+        
+    }
+    public void Disable()
+    {
+        
+    }
+
+    public void RefreshRemainsEnemies(int value)
+    {
+        _remainsEnemiesText.text = GameConstants.UI.HUDText.RemainsEnemies + value;
+    }
 
     public void SetActiveInputWindow(bool value)
     {
         _InputWindow.SetActive(value);
     }
-    public void SetActiveMenuWindow(bool value)
-    {
-        _MenuWindow.SetActive(value);
-    }
 
     public void SetActiveGameOverWindow(bool value)
     {
 //        _GameOverWindow.SetActive(value);
+    }
+
+    public void SetActiveRemainsEnemiesText(bool value)
+    {
+        _remainsEnemiesText.gameObject.SetActive(value);
+    }
+
+    public void SetActiveTimeText(bool value)
+    {
+        _timeWaveText.gameObject.SetActive(value);
     }
 
     public void SetActiveHUDWindow(bool value)
@@ -53,11 +74,6 @@ public class GUIManager : PersistentSingleton<GUIManager> {
     {
         _timeWaveText.text = GameConstants.UI.HUDText.WaveTime + count.ToString(GameConstants.UI.HUDText.TimeStringFormat);
     }
-/*
-    public void SetWeaponName(string name)
-    {
-        _weaponNameText.text = name;
-    }*/
     public void SetWeaponImage(Sprite image)
     {
         _weaponImage.sprite = image;

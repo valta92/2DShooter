@@ -1,17 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SoundManager : PersistentSingleton<SoundManager> {
+public class SoundManager : PersistentSingleton<SoundManager> , IInitialize{
 
     public AudioSource efxSource;
     public AudioSource musicSource;           
     public float lowPitchRange = .95f;
     public float highPitchRange = 1.05f;
 
-    public void Start()
+    public void Initialize()
     {
         efxSource = GetComponent<AudioSource>();
     }
+
+    public void Disable()
+    {
+        
+    }
+
     public void PlaySingle(AudioClip clip)
     {
         efxSource.clip = clip;

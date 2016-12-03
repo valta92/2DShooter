@@ -4,7 +4,7 @@ using System.Collections;
 
 public class BarrelController : MonoBehaviour , IHealth{
 
-    public event EventHandler OnDamaged
+    public event EventHandler<UnitArgs> OnDamaged
     {
         add
         {
@@ -15,7 +15,7 @@ public class BarrelController : MonoBehaviour , IHealth{
             _onDamaged -= value;
         }
     }
-    public event EventHandler OnDestroyed
+    public event EventHandler<UnitArgs> OnDestroyed
     {
         add
         {
@@ -32,8 +32,8 @@ public class BarrelController : MonoBehaviour , IHealth{
     public float ExplosionRadius { get { return _explosionRadius; } }
     public float ExplosionForce { get { return _explosionForce; } }
 
-    private event EventHandler _onDamaged;
-    private event EventHandler _OnDestroyed;
+    private event EventHandler<UnitArgs> _onDamaged;
+    private event EventHandler<UnitArgs> _OnDestroyed;
 
     [SerializeField]private Health _health;
     [SerializeField]private int _damage;

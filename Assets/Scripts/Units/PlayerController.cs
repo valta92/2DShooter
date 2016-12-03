@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour , IHealth
 {
 
 
-    public event EventHandler OnDamaged
+    public event EventHandler<UnitArgs> OnDamaged
     {
         add
         {
@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour , IHealth
             _onDamaged -= value;
         }
     }
-    public event EventHandler OnDestroyed
+    public event EventHandler<UnitArgs> OnDestroyed
     {
         add
         {
@@ -35,8 +35,8 @@ public class PlayerController : MonoBehaviour , IHealth
     public float MoveSpeed{ get { return moveSpeed; } }
 
 
-    private event EventHandler _onDamaged;
-    private event EventHandler _OnDestroyed;
+    private event EventHandler<UnitArgs> _onDamaged;
+    private event EventHandler<UnitArgs> _OnDestroyed;
     private event EventHandler<ColliderEventArgs> _onTriggerEnter;
     private event EventHandler<ColliderEventArgs> _onTriggerExit;
 
