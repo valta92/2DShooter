@@ -9,8 +9,8 @@ namespace GameConstants
         public const float IdleTime = 10f;
         public static readonly Dictionary<int, WaveSpawn> Wave = new Dictionary<int, WaveSpawn>() 
         {
-            { 0, new WaveSpawn(2,40f,5) },
-            { 1, new WaveSpawn(2,5f,5) },
+            { 0, new WaveSpawn(2,10,5) },
+            { 1, new WaveSpawn(2,2,5) },
             { 2, new WaveSpawn(20,40f,5) },
             { 3, new WaveSpawn(30,40f,5) },
             { 4, new WaveSpawn(35,40f,5) },

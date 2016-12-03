@@ -147,7 +147,7 @@ public class WaveManager : PersistentSingleton<WaveManager> , IInitialize{
 
         int spawnEnemiesCount = GameConstants.WaveInfo.Wave[index].enemyCount;
         float timer = GameConstants.WaveInfo.Wave[index].timeWave;
-        float timeRespawn = timer / _remainsEnemies;
+        float timeRespawn = timer / spawnEnemiesCount;
         float timerRes = timeRespawn;
         string[] enemiesNames = GameConstants.Enemy.EnemiesNames;
 

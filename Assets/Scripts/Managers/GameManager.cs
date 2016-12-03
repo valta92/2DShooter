@@ -61,7 +61,7 @@ public class GameManager : PersistentSingleton<GameManager> , IInitialize
     }
     public void GameOver()
     {
-        PoolManager.DeactivateAll();
+        //PoolManager.DeactivateAll();
         StopAllCoroutines();
         LoadManager.Instance.GoToLevel(0);
     }
@@ -88,7 +88,6 @@ public class GameManager : PersistentSingleton<GameManager> , IInitialize
         {
             SetPause(!hasFocus);
         }
-
     }
 
 }     
