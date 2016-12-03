@@ -24,6 +24,14 @@ namespace GameConstants
 
         };
     }
+    public static class InputManager
+    {
+        public const string moveAxisX = "AxisMoveX";
+        public const string moveAxisY = "AxisMoveY";
+        public const string aimAxisX = "Horizontal";
+        public const string aimAxisY = "Vertical";
+        public const string Fire = "Jump";
+    }
     public static class Score
     {
         public const string ScoreKey = "Score";

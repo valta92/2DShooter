@@ -67,10 +67,10 @@ public class InputManager : PersistentSingleton<InputManager> , IInitialize
             return;
 
 
-        aimAxisY = CnInputManager.GetAxis("Vertical");
-        aimAxisX = CnInputManager.GetAxis("Horizontal");
-        moveAxisX = CnInputManager.GetAxis("AxisMoveX");
-        moveAxisY = CnInputManager.GetAxis("AxisMoveY");
+        aimAxisY = CnInputManager.GetAxis(GameConstants.InputManager.aimAxisY);
+        aimAxisX = CnInputManager.GetAxis(GameConstants.InputManager.aimAxisX);
+        moveAxisX = CnInputManager.GetAxis(GameConstants.InputManager.moveAxisX);
+        moveAxisY = CnInputManager.GetAxis(GameConstants.InputManager.moveAxisY);
 
 
         if (_onAimAxisChanged != null)
@@ -79,7 +79,7 @@ public class InputManager : PersistentSingleton<InputManager> , IInitialize
         if (_onMoveAxisChanged != null)
             _onMoveAxisChanged(this, new AxisEventArgs(new Vector2(moveAxisX, moveAxisY)));
 
-        if (CnInputManager.GetButtonDown("Jump"))
+        if (CnInputManager.GetButtonDown(GameConstants.InputManager.Fire))
         {
             if (_onFireClicked != null)
                 _onFireClicked(this, null);
